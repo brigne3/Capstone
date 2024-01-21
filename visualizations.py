@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-%matplotlib inline
+#%matplotlib inline
 
 # Read the csv
 df = pd.read_csv("housing_price_dataset.csv")
