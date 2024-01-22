@@ -48,7 +48,6 @@ r2 = r2_score(y_test, price_prediction)
 # Uncomment to print the r2 score
 # print(f'R2 Score on Test Set: {r2}')
 
-'''
 while True:
     print("Enter home data for an estimate. Press -1 on any answer to exit")
 
@@ -126,4 +125,3 @@ while True:
     currency_estimate = "{:,}".format(estimate)
 
     print("Price estimate: $" + str(currency_estimate))
-'''
