@@ -24,14 +24,14 @@ df['SquareFeet'] = df['SquareFeet'].astype(np.int32)
 neighborhood_mapping = {'Rural': 1, 'Suburb': 2, 'Urban': 3}
 df['Neighborhood'] = df['Neighborhood'].map(neighborhood_mapping)
 
-# Separate features and target variable
+# Designate the variables
 X = df[['Bedrooms', 'Bathrooms', 'SquareFeet', 'Neighborhood', 'YearBuilt']]
 y = df['Price']
 
-# Split the data into training and testing sets
+# Split the data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=17)
 
-# Train the Linear Regression model
+# Train the model
 model = LinearRegression()
 model.fit(X_train, y_train)
 
@@ -46,7 +46,7 @@ buildyear_multiplier = round(model.coef_[4], 2)
 
 r2 = r2_score(y_test, price_prediction)
 # Uncomment to print the r2 score
-# print(f'R2 Score on Test Set: {r2}')
+# print(f'R2 Score of model: {r2}')
 
 while True:
     print("Enter home data for an estimate. Press -1 on any answer to exit")
