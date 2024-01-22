@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 # Read the csv
 df = pd.read_csv("housing_price_dataset.csv")
@@ -43,6 +44,11 @@ sf_multiplier = round(model.coef_[2], 2)
 neighborhood_multiplier = round(model.coef_[3], 2)
 buildyear_multiplier = round(model.coef_[4], 2)
 
+r2 = r2_score(y_test, price_prediction)
+# Uncomment to print the r2 score
+# print(f'R2 Score on Test Set: {r2}')
+
+'''
 while True:
     print("Enter home data for an estimate. Press -1 on any answer to exit")
 
@@ -120,3 +126,4 @@ while True:
     currency_estimate = "{:,}".format(estimate)
 
     print("Price estimate: $" + str(currency_estimate))
+'''
